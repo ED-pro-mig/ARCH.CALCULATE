@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light theme — в духе lizadetkova.com: тёплый светлый фон, сдержанные акценты */
+    --background: 40 20% 98%;
+    --foreground: 30 10% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 18%;
+    --primary: 30 8% 22%;
+    --primary-foreground: 40 20% 98%;
+    --secondary: 35 15% 94%;
+    --secondary-foreground: 30 10% 18%;
+    --muted: 35 12% 92%;
+    --muted-foreground: 30 6% 45%;
+    --accent: 30 8% 22%;
+    --accent-foreground: 40 20% 98%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 35 12% 88%;
+    --input: 35 12% 90%;
+    --ring: 30 8% 30%;
+    --radius: 0.5rem;
+    --font-heading: "Cormorant Garamond", "Georgia", serif;
+    --font-body: "Inter", system-ui, sans-serif;
+  }
+
+  .dark {
+    /* Dark theme — тёплый тёмный, как у студии */
+    --background: 30 12% 10%;
+    --foreground: 40 15% 95%;
+    --card: 30 10% 14%;
+    --card-foreground: 40 15% 95%;
+    --popover: 30 10% 14%;
+    --popover-foreground: 40 15% 95%;
+    --primary: 40 25% 92%;
+    --primary-foreground: 30 12% 10%;
+    --secondary: 30 10% 20%;
+    --secondary-foreground: 40 15% 95%;
+    --muted: 30 10% 22%;
+    --muted-foreground: 35 15% 65%;
+    --accent: 40 25% 92%;
+    --accent-foreground: 30 12% 10%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 10% 24%;
+    --input: 30 10% 24%;
+    --ring: 40 20% 75%;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  button:not([disabled]),
+  [role="button"]:not([disabled]) {
+    cursor: pointer;
+  }
+}
